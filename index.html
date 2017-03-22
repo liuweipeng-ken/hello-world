@@ -3,12 +3,15 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>HTML+CSS基础课程</title>
+        <style type="text/css">
+        table tr td,th{border:1px solid #000;} 
+       </style>  <!--  CSS样式，如果内嵌需要加入到sytle标签里 -->
     </head>
     <body>
     <p>2017年3月15日</p>
     <hr />
-
-  <h3>1. HTML文件的固定结构</h3> 
+<ol>
+  <li>HTML文件的固定结构</li> 
     <p>只使用pre标签无法显示代码，仍旧会被浏览器编译，需要使用<a href="http://www.w3school.com.cn/html/html_entities.asp">符号实体</a>表示特殊字符"& lt;"替换<,"& gt;"替换>才行。另外，html代码中输入空格和回车都是没有作用的，输入回车需要使用 br标签，输入连续空格需要使用 & nbsp 符号实体(如果不使用实体，无论输入多少空格，只会显示一个)</p>
     <pre>
     &lthtml&gt
@@ -16,7 +19,7 @@
     &ltbody&gt...&lt/body&gt
     &lt/html&gt
     </pre>         
-  <h3>2. 认识head标签</h3>
+  <li>认识head标签</li>
     <pre><!--本来是代码，不知道为啥显示不出来，后续修改-->
     &lthead&gt
     &ltmeta&gt
@@ -25,45 +28,273 @@
     &ltscript&gt...&lt/script&gt
     &lt/head&gt
     </pre> 
- <h3>3. 了解hx标签，为你的网页添加标题</h3>
+ <li>了解hx标签，为你的网页添加标题</li>
+  
     <h1>一级标题</h1>
     <h2>二级标题</h2>
     <h3>三级标题</h3>
     <h4>四级标题</h4>
     <h5>五级标题</h5>
     <h6>六级标题</h6>
- <h3>4. 加入强调语气，使用strong和em标签</h3>
-     <em>em的使用效果</em><br>
-     <strong>strong的使用效果</strong>
-<h3>5. span标签没有语义，主要用来设置单独的样式</h3>
+
+ <li>加入强调语气，使用strong和em标签</li>
+    <br />
+    <ul>
+     <li><em>em的使用效果</em><br></li>
+     <li><strong>strong的使用效果</strong></li>
+    </ul>
+     <br />
+<li>span标签没有语义，主要用来设置单独的样式</li>
     <pre>
     	&ltspan&gtspan标签的&lt/span&gt使用方式
     </pre>
-<h3>6. 文本引用</h3>
-     <h4>使用q标签表示短文本引用</h4>
-    <p>引用的文本不用加双引号，浏览器会对q标签自动添加双引号。样例如下：</p><br /><br />
+<li>文本引用</li>
+    <pre>
+     <ul><li>使用q标签表示短文本引用</li>
+    <p>引用的文本不用加双引号，浏览器会对q标签自动添加双引号。样例如下：</p>
     <q>锦瑟无端五十弦，一弦一柱思华年。</q>
-     <h4>使用blockquote引用长文本</h4>
+     <li>使用blockquote引用长文本</li>
     <p>浏览器对blockquote标签的解析是前后缩进样式</p>
     <blockquote>明月出天山，苍茫云海间。长风几万里，吹度玉门关。汉下白登道，胡窥青海湾。由来征战地，不见有人还。 戍客望边色，思归多苦颜。高楼当此夜，叹息未应闲。</blockquote>
     
     效果如下：<br>
     <img src="http://img.mukewang.com/528c50ea000146a205520264.jpg" style="width: 350px" />
-<h3>7. br标签分行</h3>
-    &ltbr /&gt为空标签，没有HTML内容的标签就是空标签，空标签只需要写一个开始标签，这样的标签有&ltbr /&gt、&lthr /&gt和&ltimg /&gt &lthr /&gt。 &ltbr /&gt和&ltbr&gt 都正确，&ltbr /&gt是 xhtml1.0的写法，&ltbr&gt 是html4.01的写法，一般都使用xhtml1.0的写法，这个更规范。
+    </ul>
+    </pre>
+
+<li>br标签分行</li>
+    &ltbr /&gt为空标签，没有HTML内容的标签就是空标签，空标签只需要写一个开始标签，这样的标签有&ltbr /&gt、&lthr /&gt和&ltimg /&gt。 &ltbr /&gt和&ltbr&gt 都正确，&ltbr /&gt是 xhtml1.0的写法，&ltbr&gt 是html4.01的写法，一般都使用xhtml1.0的写法，这个更规范。
     <p>明月出天山，苍茫云海间。<br />长风几万里，吹度玉门关。<br />汉下白登道，胡窥青海湾。<br />由来征战地，不见有人还。 <br />戍客望边色，思归多苦颜。<br />高楼当此夜，叹息未应闲。</p>
 
-<h3>8. address标签为网页加入地址信息</h3>
+<li>address 标签的使用</li>
     <p>一般网页中会有一些网站的联系地址信息需要在网页中展示出来，这些联系地址信息如公司的地址就可以address标签。也可以定义一个地址（比如电子邮件地址）、签名或者文档的作者身份。address里的内容在浏览器默认的样式为斜体</p>
     &ltaddress&gt
-    本文的作者：&lta href="mailto:lilian@imooc.com"&gtlilian&lt/a&gt
+    本文的作者：&lta href="mailto:lilian@imooc.com"&gt;ken&lt;/a&gt;
     &lt/address&gt <br />
     效果如下：<br />
     <address>
-本文的作者：<a href="mailto:lilian@imooc.com">lilian</a>
+本文的作者：<a href="mailto:lilian@imooc.com">ken</a>
 </address>
+<br />
+<li>在网页中显示代码</li>
+   <p>使用code只能加入一行代码，多行代码使用pre。pre标签的作用是：预格式化文本，被包围在pre元素中的文本通常会保留空格和换行符</p>
+   如下代码：
+   <pre>
+&lt;pre&gt;
+    var message="欢迎";
+    for(var i=1;i&lt;=10;i++)
+    {
+        alert(message);
+    }
+&lt;/pre&gt;
+   </pre>
+
+<li>有序（ol）和无序标签（ul）</li>
+     <ul>
+     <li>ul-li是没有前后顺序的信息列表</li>
+      举例：
+     <pre>
+  &lt;ul&gt;
+  &lt;li&gt;精彩少年&lt;/li&gt;
+  &lt;li&gt;美丽突然出现&lt;/li&gt;
+  &lt;li&gt;触动心灵的旋律&lt;/li&gt;
+  &lt;/ul&gt;
+     </pre> 
+     效果如下：<br />
+     <img src="http://img.mukewang.com/52d3851200012ec503870284.jpg" width="350" /><br />
+
+     <li>ol-li是有前后顺序的标签，默认从1开始</li>
+    </ul>
+   <br />
+<li>div标签来进行排版</li>
+div标签相当于一个容器，页面上相互关联的元素，可以用div标签圈起来。
+
+为了使逻辑更清楚，可以为div标签添加id属性，id一般在一个页面是唯一的。
+   <br />
+<li>table标签，为网页添加表格</li>
+
+<p>创建表格的四个元素：table、tbody、tr、th、td</p>
+
+<table cellspacing="0px" summary="此表格为应用实例，随着学习的进度，逐渐改变">
+   <caption>表格创建应用实例</caption>
+    <tr>
+    	<th>标签名称</th>
+        <th>相关描述</th>
+    </tr>
+	<tr>
+		<td>table标签</td>
+		<td>整个表格以&lt;table&gt;标记开始、&lt;/table&gt;标记结束。在table标签中添加cellspacing=0px 属性可以取消单元格之间的缝隙</td>
+	</tr>
+		<tr>
+		<td>tbody标签</td>
+		<td>当表格内容非常多时，表格会下载一点显示一点，但如果加上&lt;tbody&gt;标签后，这个表格就要等表格内容全部下载完才会显示。</td>
+	</tr>
+		<tr>
+		<td>tr标签</td>
+		<td>&lt;tr&gt;…&lt;/tr&gt;表格的一行，所以有几对tr 表格就有几行</td>
+	</tr>
+		<tr>
+		<td>td标签</td>
+		<td>&lt;td&gt;…&lt;/td&gt;：表格的一个单元格，一行中包含几对&lt;td&gt;...&lt;/td&gt;，说明一行中就有几列。</td>
+	</tr>
+		<tr>
+		<td>th标签</td>
+		<td>&lt;th&gt;…&lt;/th&gt;：表格的头部的一个单元格，表格表头。</td>
+	</tr>
+    <tr>
+    	<td>summary摘要属性</td>
+    	<td>摘要的内容是不会在浏览器中显示出来的。它的作用是增加表格的可读性(语义化)，使搜索引擎更好的读懂表格内容，还可以使屏幕阅读器更好的帮助特殊用户读取表格内容。语法：&lt;table summary="表格简介文本">&gt;</td>
+    </tr>
+    <tr>
+    	<td>caption标签</td>
+    	<td>caption标签为标题标签，用以描述表格内容，标题的显示位置：表格上方</td>
+    </tr>
 
 
 
+	</tr>
+		<tr>
+		<td>总结</td>
+		<td>1、table表格在没有添加css样式之前，在浏览器中显示是没有表格线的
+            2、表头，也就是th标签中的文本默认为粗体并且居中显示</td>
+	</tr>
+</table>
+     <br />
+<li>a标签的使用</li>
+   <ul>
+   <li>a标签实现超链接</li>
+   <p>a标签实现超链接，语法为：&lt;a  href="目标网址" target="_blank" title="鼠标滑过显示的文本"&gt;链接显示的文本&lt;/a&gt;</p>
+   效果如下：<br />
+   <a  href="目标网址" target="_blank" title="鼠标滑过显示的文本">链接显示的文本</a>
+   <p>title属性的作用，鼠标滑过链接文字时会显示这个属性的文本内容。这个属性在实际网页开发中作用很大，主要方便搜索引擎了解链接地址的内容（语义化更友好）</p>
+   <p>&lt;a&gt;标签在默认情况下，链接的网页是在当前浏览器窗口中打开，有时我们需要在新的浏览器窗口中打开,这个时候就需要使用target="_blank"。</p>
+   <li>a标签链接email地址</li>
+   <p>a标签还有一个作用是可以链接Email地址，使用mailto能让访问者便捷向网站管理者发送电子邮件。我们还可以利用mailto做许多其它事情。下面一一进行讲解，请看详细图示：</p>
+   <img src="http://img.mukewang.com/52da4f2a000150b714280550.jpg">
+   <p>注意：如果mailto后面同时有多个参数的话，第一个参数必须以“?”开头，后面的参数每一个都以“&”分隔。下面是一个完整的实例:</p>
+   <img src="http://img.mukewang.com/52da52200001e00e07930061.jpg"> <br />
+   实例效果：<br />
+   <a href="mailto:cccc@hotmail.com?cc=bbbb@hotmail.com;ddd@hotmail.com&bcc=boss@hotmail.com&subject=邮件主题&boday=邮件正文">邮件样例</a>
+   </ul>
+
+   <br />
+<li>使用img标签插入图片</li>
+   <p>使用&lt;img&gt;标签来插入图片，语法如下：</p>
+   <code >&lt;img src="图片地址" alt="下载失败时的替换文本" title = "鼠标滑过的提示文本"&gt;</code>  
+   <!-- code标签只能显示一行代码，pre可以显示多行  -->
+   
+   <br />
+<li>使用表单标签与用户交互</li>
+   <p>我们使用HTML表单(form)来与用户进行交互。表单是可以把浏览者输入的数据传送到服务器端，这样服务器端程序就可以处理表单传过来的数据。语法如下：</p>
+
+   <code>&lt;form method="传送方式" action="服务器文件"&gt;</code> 
+   <strong>br在code代码前后添加为什么换行都体现在后面？？？</strong>
+  
+   <ul>
+   	<li>form标签是成对出现的，以&lt;from&gt;开始，以&lt;/form&gt;结束</li>
+   	<li>浏览者输入的数据被传送到action指代的地方，比如一个php页面（save.php)</li>
+    <li>method是数据传送的方法（get/post)
+    <pre>&lt;form   method="post"   action="save.php"&gt;
+        &lt;label for="username"&gt;用户名:&lt;/label&gt;
+        &lt;input type="text" name="username" /&gt;
+        &lt;label for="pass"&gt;密码:&lt;/label&gt;
+        &lt;input type="password" name="pass" /&gt;
+        &lt;/form&gt;
+    </pre>
+   <li>所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在 &lt;form&gt;&lt;/form&gt; 标签之间（否则用户输入的信息可提交不到服务器上！）。</li>
+   <li>get是从服务器上获取数据，post是向服务器传送数据。get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。</li>
+    </li>
+   	  </ul>
+    <br />
+ <li>文本输入框和密码输入框</li>
+    <p>当用户要在表单中输入文字和内容事，就会用到文本输入框，文本输入框也可以转化为密码输入框。语法如下：</p>
+    &lt;from&gt;
+         &lt;input type="text/password" name="名称" value="默认文本" /&gt;
+    &lt;/from&gt;
+<ul>  
+<li>
+type：
+
+   当type="text"时，输入框为文本输入框;
+
+   当type="password"时, 输入框为密码输入框。
+</li>
+<li>2、name：为文本框命名，以备后台程序ASP 、PHP使用。</li>
+
+<li>3、value：为文本输入框设置默认值。(一般起到提示作用)</li> <br />
+<p>实例如下：</p>
+<form>
+<label>账户</label>
+<input type="text" name="名称" value="请输入文本" /><br />
+<label>密码</label> 
+<input type="password" name="名称" placeholder="请输入密码" />
+</form>
+</ul>
+<br />
+<li>文本域用来支持多行文本输入</li>
+<p>当用户需要在表单中输入大段文字时,需要使用文本输入域</p>
+&lt;textarea rows="行数" cols="列数"&gt; 文本内容 &lt;/textarea&gt;
+<ul>
+	<li>textarea标签是成对出现的</li>
+	<li>cols ：多行输入域的列数。</li>
+	<li>cols ：多行输入域的列数。</li>
+	<li>在&lt;textarea&gt;&lt;/textarea&gt;标签之间可以输入默认值。</li>
+</ul>
+<p><strong>实例如下</strong></p>
+     <form  method="post" action="save.php">
+        <label>联系我们</label><br />
+        <textarea cols="50" rows="10" >在这里输入内容...</textarea>
+</form>
+<br />
+<li>使用单选框，复选框让用户选择</li>
+<p>单选框和复选框可以减少用户操作，语法如下：</p>
+&lt;input   type="radio/checkbox"   value="提交到服务器的值"    name="控件名称"   checked="checked"/&gt;
+<ul>
+<li>
+1、type:
+
+   当 type="radio" 时，控件为单选框
+
+   当 type="checkbox" 时，控件为复选框
+</li>
+<li>2、value：提交数据到服务器的值（后台程序PHP使用）
+</li>
+<li>3、name：为控件命名，以备后台程序 ASP、PHP 使用.<strong>当使用单选事，name取值要一致，这样同一组的单选按钮才可以起到单选的作用</strong>
+</li>
+<li>
+4、checked：当设置 checked="checked" 时，该选项被默认选中
+</li>
+</ul>
+<p>实例如下</p>
+
+<form method="post" action="save.php">
+	<label>你是否喜欢旅游？</label> <br />
+	<input type="radio" name="radiolvoe" value="1"> 喜欢
+	<input type="radio" name="radiolvoe" value="2" > 不喜欢
+	<input type="radio" name="radiolvoe" value="3" checked="checked"> 保密
+    <br />
+    <label>你最想去的城市有哪些？</label> <br />
+    <input type="checkbox" name="checkbox1" value="1"> 西藏
+    <input type="checkbox" name="checkbox2" value="2"> 丽江
+    <input type="checkbox" name="checkbox3" value="3"> 三亚
+    <input type="checkbox" name="checkbox4" value="4"> 大理
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ol>
     </body>
 </html>
