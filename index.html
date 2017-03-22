@@ -219,9 +219,9 @@ type：
 
    当type="password"时, 输入框为密码输入框。
 </li>
-<li>2、name：为文本框命名，以备后台程序ASP 、PHP使用。</li>
+<li>name：为文本框命名，以备后台程序ASP 、PHP使用。</li>
 
-<li>3、value：为文本输入框设置默认值。(一般起到提示作用)</li> <br />
+<li>value：为文本输入框设置默认值。(一般起到提示作用)</li> <br />
 <p>实例如下：</p>
 <form>
 <label>账户</label>
@@ -280,16 +280,80 @@ type：
     <input type="checkbox" name="checkbox4" value="4"> 大理
 </form>
 
+<li>创建下拉列表框，节省空间</li>
+<p>下拉列表可以有效的节省网页空间，即可以单选，又可以多选。语法结构如下：</p>
+   &lt;select&gt;
+             &lt;option value="提交给服务器的值"&gt; 显示的值（选项）&lt;/option&gt;
+             &lt;option value="提交给服务器的值" selected="selected"&gt; 显示的值（选项）&lt;/option&gt;
+   &lt;/select&gt;
 
+<p>当设置selected="selected"属性，则该选项默认被选中。实例如下：</p>
 
+<form action="save.php" method="post" >
+    <label>你想去的城市:</label>
+    <select>
+      <option value="1">厦门</option>
+      <option value="2" selected="selected">西藏</option>
+      <option value="3">三亚</option>
+      <option value="4">杭州</option>
+    </select>
+</form>
 
+<p>下拉列表也可以进行多选操作，在select标签中设置multiple="multiple"属性，就可以实现多选功能，在 windows 操作系统下，进行多选时按下Ctrl键同时进行单击（在 Mac下使用 Command +单击），可以选择多个选项。实例如下：</p>
 
+<form action="save.php" method="post" >
+    <label>你想去的城市:</label>
+    <select multiple="multiple">
+      <option value="1">厦门</option>
+      <option value="2" selected="selected">西藏</option>
+      <option value="3">三亚</option>
+      <option value="4">杭州</option>
+    </select>
+</form>
 
+<li>使用提交按钮，提交数据</li>
+<p>在表单中有两种按钮可以使用，分别为：提交按钮、重置。</p>
+<ul>
+	<li>当用户需要提交表单信息到服务器的时候，需要用到提交按钮。语法如下：</li>
+	<code>&lt;input type="submit" value="按钮显示的文字" &gt;</code>
+	<li>当用户需要重置表单信息到初始时的状态时，可以使用重置按钮，使输入框恢复到初始状态，语法如下：</li>
+	<code>&lt;input type="reset" value="按钮显示的文字" &gt;</code>
+</ul>
+<p>实例如下</p>
 
+<form action="save.php" method="post" >
+    <label>你的姓名:</label>
+    <input type="text" name="姓名" value="请输入文字">
+    <input type="submit" name="提交按钮">
+    <input type="reset" name="重置按钮">
+</form>
 
+<li>Form表单中label标签的作用</li>
+<p>label标签不会向用户呈现任何特殊效果，它的作用是为鼠标用户改进了可用性。如果你在 label标签内点击文本，就会触发此控件。就是说，当用户单击选中该label标签时，浏览器就会自动将焦点转到和标签相关的表单控件上（就自动选中和该label标签相关连的表单控件上）。语法：</p>
+<code>&lt;label for="控件的id名称"</code>
+<p>注意：标签for属性中的值应当与相关控件的id属性值相同</p>
 
-
-
+<p>例子如下：</p>
+<pre >&lt;form&gt;
+  &lt;label for="male"&gt;男&lt;/label&gt;
+  &lt;input type="radio" name="gender" id="male" /&gt;
+  &lt;br /&gt;
+  &lt;label for="female"&gt;女&lt;/label&gt;
+  &lt;input type="radio" name="gender" id="female"/&gt;
+  &lt;label for="email"&gt;输入你的邮箱地址&lt;/label&gt;
+  &lt;input type="email" id="email" placeholder="Enter email"&gt;
+&lt;/form&gt;</pre>
+<p>实际效果如下：</p>
+<form>
+  <label for="male">男</label>
+  <input type="radio" name="gender" id="male" />
+  <br />
+  <label for="female">女</label>
+  <input type="radio" name="gender" id="female" />
+  <br />
+  <label for="email">输入你的邮箱地址</label>
+  <input type="email" id="email" placeholder="Enter email">
+</form>
 
 
 
