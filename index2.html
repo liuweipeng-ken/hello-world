@@ -5,6 +5,12 @@
         <title>HTML+CSS基础课程</title>
         <style type="text/css">
         table tr td,th{border:1px solid #000;} 
+        p{
+          font-size: 12px;
+        }
+        li{
+          font-weight: bold;
+        }
        </style>  <!--  CSS样式，如果内嵌需要加入到sytle标签里 -->
     </head>
     <body>
@@ -355,10 +361,36 @@ type：
   <input type="email" id="email" placeholder="Enter email">
 </form>
 </ol>
+<h1>3月23日  CSS样式学习</h1>
+<hr>
+<ol>
+<li>认识CSS样式</li>
+<p>CSS全称为“层叠样式表 (Cascading Style Sheets)”，它主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。</p>
+<p>使用CSS样式的一个好处是通过定义某个样式，可以让不同网页位置的文字有着统一的字体、字号或者颜色等。如下代码：</p>
+<pre >p{
+   font-size:12px;
+   color:red;
+   font-weight:bold;
+}</pre>
 
+<li>CSS代码语法</li>
+css样式由选择符和声明组成，而声明又由属性和值组成，如下图：<br />
+<img src="http://img.mukewang.com/52fde5c30001b0fe03030117.jpg">
+<p><strong>选择符</strong>，又称选择器，指网页中要应用样式规则的元素，如本例中的p元素</p>
+<p><strong>声明</strong>，在英文大括号{}中，属性和值之间用英文冒号分隔，当有多条声明时，中间可以英文分号分隔</p>
+<strong>注意</strong>
+<p>1、最后一条声明可以没有分号，但是为了以后修改方便，一般也加上分号。</p>
 
-
-
+<p>2、为了使用样式更加容易阅读，可以将每条代码写在一个新行内，如下所示：</p>
+<li>CSS注释代码</li>
+<p>在CSS中，使用/*注释语句*/来标明注释语句。如下图：</p><br />
+<img src="http://img.mukewang.com/52fd724e0001768503250108.jpg">
+<li>CSS样式代码插入形式</li>
+<p>CSS 样式按照代码插入的形式基本可以分为3种：内联式、嵌入式和外部式三种。下面依次来介绍：</p>
+<p>①内联式</p>
+<p>内联式是指把css样式表就是css代码直接写在现有的html起始标签中，如下面的代码</p>
+<pre >&lt;p style="color:red<code class="marker">;</code>font-size:12px"&gt;这里文字是红色。&lt;/p&gt;</pre>
+<p>当有多条样式代码时，用英文分号隔开</p>
 
 
 
