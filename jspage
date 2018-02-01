@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<body>
+<h2> Javascript Alert Example</h2>
+
+<button onclikc="myFunction()">Try it</button>
+
+<script>
+
+function myFunction(){
+	alert("I am an alert box");
+}
+</script>
+
+</body>
+</html>
