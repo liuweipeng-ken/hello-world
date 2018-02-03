@@ -83,7 +83,7 @@
 				"plat": phonechose,
 				"email":e_value
 			};
-		var str = "http://activity.zloong.com/mzappoint/emailAppoint.do";
+		var str = "https://activity.zloong.com/mzappoint/emailAppoint.do";
 		$.ajax({
 			async: false,
 			dataType: 'json',
@@ -108,7 +108,7 @@
     	$.ajax({
 			async: false,
 			type: "get",
-			url: "http://activity.zloong.com/mzappoint/getTotal.do?gameId=205",
+			url: "https://activity.zloong.com/mzappoint/getTotal.do?gameId=205",
 			success: function(data) {
 				var len = data.totalNum.toString().length;
 				var numberStr = '';
