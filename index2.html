@@ -404,7 +404,7 @@ line-height:1.6em;
 <pre >&lt;p style="color:red<code class="marker">;</code>font-size:12px"&gt;这里文字是红色。&lt;/p&gt;</pre>
 <p>当有多条样式代码时，用英文分号隔开</p>
 <p>②嵌入式</p>
-<p>嵌入式css样式，就是可以把css样式代码写在&lt;style type="text/css"&gt;&lt;/style&gt;标签之间。style则在head之间。如下面代码实现把三个&ltl;span&gt;标签中的文字设置为红色：</p>
+<p>嵌入式css样式，就是可以把css样式代码写在&lt;style type="text/css"&gt;&lt;/style&gt;标签之间。style则在head之间。如下面代码实现把三个&lt;span&gt;标签中的文字设置为红色：</p>
 <pre>&lt;style type="text/css"&gt;
 span{
 color:red;
@@ -496,7 +496,8 @@ p{color:green;}
   <caption>文字排版</caption>
     <tr>
       <th>目的效果</th>
-      <th>代码</th>
+      <th >代码</th>
+      <th>其他</th>
     </tr>
     <tr>
       <td>字体</td>
@@ -505,10 +506,47 @@ p{color:green;}
           用户是否可以看到你设置的字体，取决于用户本地电脑上是否安装了该字体。上面第一个的兼容性要好于第二种；  
  
       </td>
+      <td rowspan="7">
+      <pre>
+        字体的css样式也有他自己的缩写方式：
+        body{
+            font-style:italic;
+            font-variant:small-caps; 
+            font-weight:bold; 
+            font-size:12px; 
+            line-height:1.5em; 
+           font-family:"宋体",sans-serif;
+            }
+        以上代码可以缩写为一句：
+        body{
+            font:italic  small-caps  bold  12px/1.5em  "宋体",sans-serif;
+        } 
+
+      注意：
+      使用此简写方式至少要指定 font-size 和 font-family 属性，其他的属性(如 font-weight、font-style、font-variant、line-height)如未指定将自动使用默认值。
+      在缩写时 font-size 与 line-height 中间要加入“/”斜扛。  
+      一般情况下因为对于中文网站，英文还是比较少的，所以下面缩写代码比较常用：
+       body{
+           font:12px/1.5em  "宋体",sans-serif; 
+         }
+            只是有字号、行间距、中文字体、英文字体设置。  
+     
+      </pre>
+     
+
+
+
+
+       </td>
     </tr>
         <tr>
       <td>字号，颜色</td>
-      <td>body{font-size:12px;color:#666}</td>
+      <td>body{font-size:12px;color:#666}
+    <srong>注意：此处颜色为缩写 #666666可以缩写位#666 #336699可以缩写为369</srong>
+    
+
+      </td>
+
     </tr>
 
     <tr>
@@ -527,6 +565,10 @@ p{color:green;}
       <td>删除线</td>
       <td>.oldPrice{text-decoration:line-through;}</td>
     </tr>
+        <tr>
+      <td>设置小型大写字母</td>
+      <td>p{font-variant:small-caps;} 所有小写字母转换为大写，但是与其余文本相比，字体尺寸会小</td>
+    </tr>
     <tr>
       <td colspan="2" align="center" id="">段落排版</td>
     </tr>
@@ -544,11 +586,11 @@ p{color:green;}
     </tr>
     <tr>
       <td>单词间距</td>
-      <td>h1{word-spacing:50px</td>
+      <td>h1{word-spacing:50px:}</td>
     </tr>
     <tr>
       <td>对齐</td>
-      <td>h1{text-align:center} 还可以用left，right</td>
+      <td>h1{text-align:center;} 还可以用left，right</td>
     </tr>
 
 
@@ -650,7 +692,18 @@ p{color:green;}
       </pre>
 
     </td>
-    <td></td>
+    <td>
+    <pre>
+      代码简写：
+      ① 如果top,right,bottom,left的值相同为10px：
+      margin:10px;
+      ② 如果top和bottom相同为10px，left和right相同为20px,则可简写为
+      margin: 10px 20px;
+      ③ 如果只有left和right的值相同为20px
+      margin:10px 20px 30px;
+     </pre>
+      <strong>注意：padding、border的缩写方法和margin是一致的 </strong>
+    </td>
   </tr>
   <tr>
     <td>边界</td>
@@ -684,12 +737,12 @@ p{color:green;}
 
 流动布局模型具有2个比较典型的特征：
 
-第一点，块状元素都会在所处的包含元素内<strong>自上而下按顺序垂直延伸分布，因为在默认状态下，块状元素的宽度都为100%。</strong>实际上，块状元素都会以行的形式占据位置。如右侧代码编辑器中三个块状元素标签(div，h1，p)宽度显示为100%。</p>
+第一点，块状元素都会在所处的包含元素内<strong>自上而下按顺序垂直延伸分布，因为在默认状态下，块状元素的宽度都为100%。</strong>实际上，块状元素都会以行的形式占据位置。</p>
 <p>
   第二点，在流动模型下，内联元素(例如：a、span、em、strong)都会在所处的包含元素内从左到右水平分布显示。（内联元素可不像块状元素这么霸道独占一行）
 </p>
   <li>浮动模型</li>
-  任何元素在默认情况下是不能浮动的，但可以用 CSS 定义为浮动，如 div、p、table、img 等元素都可以被定义为浮动。如下代码可以实现两个 div 元素一行显示。设置浮动，可以让块状元素并排显示。
+  <p>任何元素在默认情况下是不能浮动的，但可以用 CSS 定义为浮动，如 div、p、table、img 等元素都可以被定义为浮动。如下代码可以实现两个 div 元素一行显示。设置浮动，可以让块状元素并排显示。</p>
   <pre>
   div{
     width:200px;
@@ -700,18 +753,22 @@ p{color:green;}
 <div id="div1"></div>
 <div id="div2"></div>
 </pre>
+效果如下：<br />
+<img src="http://img.mukewang.com/540e62c60001c56a06760417.jpg">
+
+
  <li>层模型</li>
  <p>层布局模型就像是图像软件PhotoShop中非常流行的图层编辑功能一样，每个图层能够精确定位操作，但在网页设计领域，由于网页大小的活动性，层布局没能受到热捧。但是在网页上局部使用层布局还是有其方便之处的。CSS定义了一组定位（positioning）属性来支持层布局模型。
 <pre>
 层模型有三种形式：
 
-1、绝对定位(position: absolute)
+1、绝对定位(position:absolute)
 
-2、相对定位(position: relative)
+2、相对定位(position:relative)
 
-3、固定定位(position: fixed)</p>
+3、固定定位(position:fixed)</p>
 </pre>
-<p>①如果想为元素设置层模型中的绝对定位，需要设置position:absolute(表示绝对定位)，这条语句的作用将元素从文档流中拖出来，然后使用left、right、top、bottom属性相对于其最接近的一个具有定位属性的父包含块进行绝对定位。如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。</p>
+<p>①如果想为元素设置层模型中的绝对定位，需要设置position:absolute(表示绝对定位)，这条语句的作用将元素从文档流中拖出来，然后使用left、right、top、bottom属性<strong>相对于其最接近的一个具有定位属性的父包含块进行绝对定位</strong>>。如果不存在这样的包含块，则相对于body元素，即相对于浏览器窗口。</p>
 <p>如下面代码可以实现div元素相对于浏览器窗口向右移动100px，向下移动50px。</p>
 <pre>
 div{
@@ -743,9 +800,9 @@ div{
 <p>什么叫做“偏移前的位置保留不动”呢？</p>
 <p>如下代码，在上面的例子的div标签后面插入文字</p>
 <pre>
-    <div id="div1"></div><span>偏移前的位置还保留不动，覆盖不了前面的div没有偏移前的位置</span>
+    &lt;div id="div1"&gt;&lt;/div&gt;&lt;span&gt;偏移前的位置还保留不动，覆盖不了前面的div没有偏移前的位置&lt;/span&gt;
 </pre>
-实际效果：文字仍旧在之前div标签后的位置，而并没有移动到新的位置的后面：
+实际效果：文字仍旧在之前div标签后的位置，而并没有移动到新的位置的后面：<br />
 <img src="http://img.mukewang.com/541a4bfc0001abef05940489.jpg">
 <p>③fixed：表示固定定位，与absolute定位类型类似，但它的相对移动的坐标是视图（屏幕内的网页窗口）本身。由于视图本身是固定的，它不会随浏览器窗口的滚动条滚动而变化，除非你在屏幕中移动浏览器窗口的屏幕位置，或改变浏览器窗口的显示大小，因此固定定位的元素会始终位于浏览器窗口内视图的某个位置，不会受文档流动影响，这与background-attachment:fixed;属性功能相同。以下代码可以实现相对于浏览器视图向右移动100px，向下移动50px。并且拖动滚动条时位置固定不变。</p>
 <pre>
@@ -764,9 +821,9 @@ div{
 <p>使用position:absolute可以实现被设置元素相对于浏览器（body）设置定位以后，大家有没有想过可不可以相对于其它元素进行定位呢？答案是肯定的，当然可以。使用position:relative来帮忙，但是必须遵守下面规范：</p>
 <p>1.参照定位的元素必须是相对定位元素的前辈元素：</p>
 <pre>
-  <div id="box1"><!--参照定位的元素-->
-    <div id="box2">相对参照元素进行定位</div><!--相对定位元素-->
-</div>
+  &lt;div id="box1"&gt;----参照定位的元素
+    &lt;div id="box2"&gt;相对参照元素进行定位&lt;/div&gt;--相对定位元素
+&lt;/div&gt;
 </pre>
 <p>2.参照定位的元素必须加入position:relative;</p>
 <pre>
@@ -787,8 +844,51 @@ div{
 <p>这样box2就可以相对于父元素box1定位了（这里注意参照物就可以不是浏览器了，而可以自由设置了）。</p>
 
 </ul>
+<li>
+  颜色值的使用
+</li>
+<p><pre>在网页中，颜色可以用于字体(color),背景颜色（background-color),边框（border）等，设置颜色的方法也有很多种：
+① 英文颜色：
+p{color:red}
+② RGB颜色
+这个与PS中的RGB颜色一致，由 R(red)、G(green)、B(blue) 三种颜色的比例来配色。
+p{color:rgb(13,55,200);}
+这其中每一项的数值，既可以是上面的0~255之间的整数，也可以是0%~100%的百分数：
+p{color:rgb(20%,33%,25%);}
+③十六进制颜色
+现在普遍使用的方法是十六进制颜色，其原理也是RGB设置，但是每一项的值由0~255变成了十六进制的00-ff
+p{color:#00ffff;}
+配色表如下：</pre></p>
+<a href="http://img.mukewang.com/54c5b4120001f20808000902.jpg">
+<img alt src="http://img.mukewang.com/54c5b4120001f20808000902.jpg" style="width:100px">
+</a>
+<li>长度值</li>
+<p>
+  <pre>
+长度单位总结一下，目前比较常用到px（像素）、em、% 百分比，要注意其实这三种单位都是相对单位。
+①像素
+像素为什么是相对单位呢？因为像素指的是显示器上的小点（CSS规范中假设“90像素=1英寸”）。实际情况是浏览器会使用显示器的实际像素值有关，在目前大多数的设计者都倾向于使用像素（px）作为单位。
+②em
+就是本元素给定字体的 font-size 值，如果元素的 font-size 为 14px ，那么 1em = 14px；如果 font-size 为 18px，那么 1em = 18px。如下代码：
+
+p{font-size:12px;text-indent:2em;}
+上面代码就是可以实现段落首行缩进 24px（也就是两个字体大小的距离）。
+下面注意一个特殊情况：
+但当给 font-size 设置单位为 em 时，此时计算的标准以 p 的父元素的 font-size 为基础。如下代码：
+html:
+&lt;p&gt;以这个&lt;span&gt;例子&lt;/span&gt;为例。&lt;/p&gt;
+css:
+p{font-size:14px}
+span{font-size:0.8em;}
+结果 span 中的字体“例子”字体大小就为 11.2px（14 * 0.8 = 11.2px）。
+③百分比
+p{font-size:12px;line-height:130%}
+设置行高（行间距）为字体的130%（12 * 1.3 = 15.6px）。
 
 
+
+  </pre>
+</p>
 
 </ol>
     </body>
