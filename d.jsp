@@ -4,7 +4,7 @@
       
         <title id="title">梦幻诛仙手游下载</title>  
         <meta name="viewport" content="width=device-width, initial-scale=1">  
-   <script src="http://mhzx.zloong.com/js/jquery-1.11.1.js"></script> 
+   <script src="https://mhzx.zloong.com/js/jquery-1.11.1.js"></script> 
         <style type="text/css">  
             * {  
                 margin: 0;  
